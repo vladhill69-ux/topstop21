@@ -4,4 +4,637 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Webpage</title>
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
     </head>
+        <body>
+<header>
+  <div cl
+       ass="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#top" class="logo" aria-label="Top Coat Stoppers 21 home">
+        <div class="logo-mark">TC</div>
+        <div>
+          <div class="logo-text-main">Top Coat Stoppers 21</div>
+          <div class="logo-text-sub">Plasterboard & Gib Stopping</div>
+        </div>
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#gallery" role="menuitem">Gallery</a>
+        <a href="#pricing" role="menuitem">Pricing</a>
+        <a href="#faq" role="menuitem">FAQ</a>
+        <a href="#contact" role="menuitem">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+      </div>
+
+      <button class="burger" id="burgerButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <div class="burger-lines"></div>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary" style="margin-top: 0.3rem; align-self:flex-start;">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">
+          <span>New builds • Renos</span>
+          Paint-ready walls, zero fuss.
+        </div>
+        <h1 id="hero-heading" class="hero-title">
+          Smooth, <span class="hero-highlight">paint-ready</span> walls & ceilings, every time.
+        </h1>
+        <p class="hero-subtitle">
+          Top Coat Stoppers 21 specialise in plasterboard / gib stopping, skim coating and interior plastering.
+          We handle the mess, so you just pick the paint colour.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+          <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+
+        <div class="hero-meta" aria-label="Quick facts">
+          <div class="hero-meta-item">
+            <div class="hero-meta-dot"></div>
+            <span>Level 4–5 finishes for builders & homeowners</span>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-dot"></div>
+            <span>Dust-managed sanding & tidy job sites</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper" aria-hidden="true">
+        <div class="hero-image-inner">
+          <div class="hero-overlay-tag">
+          </div>
+          <div class="hero-overlay-badge">
+            <strong>Top Coat Stoppers 21</strong>
+            <small>Plasterboard stopping • Interior plastering</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Services</div>
+        <h2 id="services-heading" class="section-title">Plasterboard & gib stopping that makes painters smile.</h2>
+        <p class="section-subtitle">
+          From new builds to patch-ups, we deliver clean, consistent finishes so your walls look straight, sharp and ready for paint.
+        </p>
+      </div>
+
+      <div class="cards-grid" role="list">
+        <article class="card" role="listitem">
+          <div class="card-icon">🧱</div>
+          <h3>Plasterboard / Gib Stopping</h3>
+          <p>All joints, corners and fixings stopped to the correct level for your project.</p>
+          <ul>
+            <li>Level 3–5 finishes</li>
+            <li>Tape & joint compound</li>
+            <li>Metal & paper angles</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $25/m²</span>
+            <a href="#contact">Book a measure →</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card-icon">🎨</div>
+          <h3>Skim Coating & Level 5</h3>
+          <p>Full skim coats for ultra-smooth surfaces under critical lighting.</p>
+          <ul>
+            <li>Feature walls & hallways</li>
+            <li>Harsh or downlight areas</li>
+            <li>Old walls refreshed</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">POA</span>
+            <a href="#contact">Ask about Level 5 →</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card-icon">🛠️</div>
+          <h3>Repairs & Insurance Work</h3>
+          <p>From door handle holes to water damage, we make repairs disappear.</p>
+          <ul>
+            <li>Match existing texture</li>
+            <li>Ceiling & wall repairs</li>
+            <li>Small jobs welcome</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $250</span>
+            <a href="#contact">Send a photo →</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card-icon">🏠</div>
+          <h3>New Builds & Renovations</h3>
+          <p>Reliable schedules and communication for builders and homeowners.</p>
+          <ul>
+            <li>Full house fit-outs</li>
+            <li>Extensions & alterations</li>
+            <li>Co-ordination with painters</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">Project pricing</span>
+            <a href="#contact">Request a quote →</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card-icon">🧽</div>
+          <h3>Ceilings & Cove</h3>
+          <p>Straight lines and clean junctions where ceilings meet walls.</p>
+          <ul>
+            <li>Standard & high ceilings</li>
+            <li>Bulkheads & details</li>
+            <li>Existing cove matched</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $30/m²</span>
+            <a href="#contact">Talk ceilings →</a>
+          </div>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="card-icon">🏢</div>
+          <h3>Light Commercial</h3>
+          <p>Office refits, small commercial spaces and shop interiors.</p>
+          <ul>
+            <li>After-hours options</li>
+            <li>Work with other trades</li>
+            <li>Durable finishes</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">POA</span>
+            <a href="#contact">Enquire now →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Process -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container about-grid">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">About</div>
+          <h2 id="about-heading" class="section-title">Top Coat Stoppers 21 – we live for straight lines and sharp corners.</h2>
+          <p class="section-subtitle">
+            We’re a small plasterboard stopping crew that treats every job like our own home.
+            Clear communication, tidy sites and reliable timelines are non-negotiable.
+          </p>
+        </div>
+
+        <div class="about-card" aria-label="Company overview">
+          <h3>What you can expect</h3>
+          <p class="about-tagline">
+            No shortcuts. No mystery invoices. Just honest work and finishes that make the paint glide on.
+          </p>
+          <ul class="about-list">
+            <li>Professional stopping for builders, homeowners and investors.</li>
+            <li>We explain the right finish level for each room, not just “whatever”.</li>
+            <li>We protect floors and joinery to minimise dust and mess.</li>
+            <li>You’ll always know who’s on site and what’s happening next.</li>
+          </ul>
+
+          <div class="about-badges" aria-label="Key strengths">
+            <span class="about-pill">✔ Level 4–5 finishes</span>
+            <span class="about-pill">✔ Small team, high standards</span>
+            <span class="about-pill">✔ New builds & renos</span>
+            <span class="about-pill">✔ Friendly & approachable</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-header" style="margin-bottom: 1rem;">
+          <div class="section-kicker">How it works</div>
+          <h2 class="section-title">Our 3-step stopping process.</h2>
+        </div>
+
+        <div class="process-steps" aria-label="Three step process">
+          <div class="process-item">
+            <div class="process-number">1</div>
+            <div class="process-content">
+              <h3>Measure & Quote</h3>
+              <p>
+                You send plans or photos, or we visit site. We confirm finish level, timeframes and any tricky details before we start.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">2</div>
+            <div class="process-content">
+              <h3>Tape, Stop & Build</h3>
+              <p>
+                We tape joints, apply coats and let them cure properly between passes.
+                Corners and angles are set straight, not “near enough”.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">3</div>
+            <div class="process-content">
+              <h3>Sand & Sign Off</h3>
+              <p>
+                We sand, light-check and touch up, then walk you through the job before painters arrive so everyone’s happy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.3rem;">
+          <a href="#contact" class="btn btn-primary">Book a free measure & quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="before-after" aria-label="Before and After slider">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Before & After</div>
+      <h2 class="section-title">See the difference.</h2>
+      <p class="section-subtitle">Drag the slider to compare raw plasterboard with a finished Level 4–5 wall.</p>
+    </div>
+
+    <div class="ba-wrapper">
+      <div class="ba-container">
+        <img src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1600" class="ba-img before-img" alt="Before plastering">
+
+        <div class="ba-img after-img" style="background-image:url('https://images.pexels.com/photos/6474477/pexels-photo-6474477.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+
+        <div class="ba-handle">
+          <div class="ba-line"></div>
+          <div class="ba-circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Gallery -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Gallery</div>
+        <h2 id="gallery-heading" class="section-title">Recent work & finishes.</h2>
+        <p class="section-subtitle">
+          Swap these placeholders with your own job photos – before & after shots, close-ups of corners and ceilings look great here.
+        </p>
+      </div>
+
+      <div class="gallery-grid" aria-label="Project gallery">
+        <div class="gallery-item" style="background-image:url('https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1200');" aria-label="Stopped plasterboard wall"></div>
+        <div class="gallery-item" style="background-image:url('https://images.pexels.com/photos/6492398/pexels-photo-6492398.jpeg?auto=compress&cs=tinysrgb&w=1200');" aria-label="Preparing plaster mix"></div>
+        <div class="gallery-item" style="background-image:url('https://images.pexels.com/photos/6492393/pexels-photo-6492393.jpeg?auto=compress&cs=tinysrgb&w=1200');" aria-label="Skim coat in progress"></div>
+        <div class="gallery-item" style="background-image:url('https://images.pexels.com/photos/6474470/pexels-photo-6474470.jpeg?auto=compress&cs=tinysrgb&w=1200');" aria-label="Finishing a joint"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Pricing</div>
+        <h2 id="pricing-heading" class="section-title">Straightforward, no-surprise pricing.</h2>
+        <p class="section-subtitle">
+          Every job is different, but these ballparks give you an idea.
+          We’ll confirm exact pricing after a quick measure or plan check.
+        </p>
+      </div>
+
+      <p class="pricing-note">
+        All pricing is indicative only and excludes GST. Travel and access may affect the final quote.
+      </p>
+
+      <div class="cards-grid">
+        <article class="card pricing-card">
+          <div class="pricing-tag">Popular for renos</div>
+          <h3 class="pricing-main">Standard Room Package</h3>
+          <p class="pricing-meta">Typical bedroom or office with standard height ceilings.</p>
+          <ul>
+            <li>Plasterboard joint stopping to Level 4</li>
+            <li>Internal & external corners</li>
+            <li>Ready for sealer/undercoat</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $650 / room</span>
+            <a href="#contact">Check your room →</a>
+          </div>
+        </article>
+
+        <article class="card pricing-card">
+          <div class="pricing-tag">Best for new builds</div>
+          <h3 class="pricing-main">Whole House Stopping</h3>
+          <p class="pricing-meta">New build or major reno, full interior stopping.</p>
+          <ul>
+            <li>Per-m² or per-project pricing</li>
+            <li>Co-ordination with your builder</li>
+            <li>Progress updates throughout</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $23–$35 / m²</span>
+            <a href="#contact">Send plans →</a>
+          </div>
+        </article>
+
+        <article class="card pricing-card">
+          <div class="pricing-tag">Small & urgent jobs</div>
+          <h3 class="pricing-main">Repairs & Patch-Ups</h3>
+          <p class="pricing-meta">Door handle holes, cracks, water damage and more.</p>
+          <ul>
+            <li>Minimum call-out fee</li>
+            <li>Fast turn-around</li>
+            <li>Colour/texture matched ready for paint</li>
+          </ul>
+          <div class="card-footer">
+            <span class="card-price">From $250 / visit</span>
+            <a href="#contact">Describe your repair →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & FAQ -->
+  <section aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="testimonials-wrapper">
+        <div class="testimonials-header">
+          <div>
+            <h2 id="testimonials-heading">What clients say.</h2>
+            <p style="font-size:0.85rem; color:#e5e7eb;">
+              Real feedback from builders and homeowners who trust Top Coat Stoppers 21 with their walls.
+            </p>
+          </div>
+        </div>
+
+        <div class="testimonial" aria-live="polite">
+          <p class="testimonial-quote" id="testimonialQuote">
+            “Top Coat Stoppers 21 nailed our reno. The painters were stoked with the prep and we hit our move-in date easily.”
+          </p>
+          <div class="testimonial-name" id="testimonialName">Sam, Builder</div>
+          <div class="testimonial-meta" id="testimonialMeta">Full house reno</div>
+
+          <div class="testimonial-dots" aria-label="Testimonials navigation">
+            <div class="testimonial-dot active" data-index="0"></div>
+            <div class="testimonial-dot" data-index="1"></div>
+            <div class="testimonial-dot" data-index="2"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq" style="margin-top: 2.6rem;">
+        <div class="section-header">
+          <div class="section-kicker">FAQ</div>
+          <h2 class="section-title">Common questions, answered.</h2>
+          <p class="section-subtitle">
+            If you’re not sure what you need, start here – or just flick us a message and we’ll talk you through it.
+          </p>
+        </div>
+
+        <div class="faq-list" aria-label="Frequently asked questions">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What’s the difference between Level 4 and Level 5 finishes?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Level 4 is the standard for most homes – joints and fixings are stopped and sanded smooth.
+              Level 5 adds a thin skim coat over the whole surface, which helps under strong or “critical” lighting
+              (long hallways, big windows, downlights) so you see fewer imperfections.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How long does a typical room take?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              It depends on size, access and drying times, but a standard bedroom usually takes 2–3 visits over several days.
+              We’ll give you a clear timeline once we’ve seen the room or plans.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you organise the painting as well?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              We focus on plasterboard stopping and prep, but we work closely with local painters and can recommend
+              someone if you don’t already have one lined up.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can you do small repair jobs?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely. Door handle holes, cracks, dents and water-damaged areas are all common.
+              Just send a photo and a rough size and we can usually give a ballpark over the phone.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container contact-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <h2 id="contact-heading" class="section-title">Ready for smooth, paint-ready walls?</h2>
+        <p class="section-subtitle">
+          Tell us a bit about your project and we’ll come back with a clear, no-obligation quote.
+          Attach plans or photos when you email to speed things up.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-details">
+          <div>
+            <span>Phone</span>
+            <a href="tel:+64220282757">+64220282757</a>
+          </div>
+          <div>
+            <span>Email</span>
+            <a href="mailto:info@topcoatstoppers21.co.nz">info@topcoatstoppers21.co.nz</a>
+          </div>
+          <div>
+            <span>Service Area</span>
+            <p>Local region & surrounding suburbs – new builds, renos and repairs.</p>
+          </div>
+          <div>
+            <span>Hours</span>
+            <p>Mon–Fri: 7:30am – 5:00pm<br />Saturdays by arrangement.</p>
+          </div>
+        </div>
+      </div>
+    </div> <!-- *** THIS was the missing closing div *** -->
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <form id="contactForm" novalidate aria-label="Request a quote form">
+        <div class="form-row">
+          <div>
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+            <div class="field-hint">So we know who to contact.</div>
+          </div>
+          <div>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" />
+            <div class="field-hint">We’ll send your quote here.</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            <div class="field-hint">Optional, but helpful for quick questions.</div>
+          </div>
+          <div>
+            <label for="serviceType">What do you need? *</label>
+            <select id="serviceType" name="serviceType" required aria-required="true">
+              <option value="">Select an option</option>
+              <option value="new-build">New build – full house</option>
+              <option value="reno">Renovation</option>
+              <option value="repair">Repairs / patch-ups</option>
+              <option value="commercial">Small commercial job</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+        </div>
+
+      <div>
+        <form id="contactForm" novalidate aria-label="Request a quote form">
+          <div class="form-row">
+            <div>
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+              <div class="field-hint">So we know who to contact.</div>
+            </div>
+            <div>
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" />
+              <div class="field-hint">We’ll send your quote here.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              <div class="field-hint">Optional, but helpful for quick questions.</div>
+            </div>
+            <div>
+              <label for="serviceType">What do you need? *</label>
+              <select id="serviceType" name="serviceType" required aria-required="true">
+                <option value="">Select an option</option>
+                <option value="new-build">New build – full house</option>
+                <option value="reno">Renovation</option>
+                <option value="repair">Repairs / patch-ups</option>
+                <option value="commercial">Small commercial job</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="message">Project details *</label>
+            <textarea id="message" name="message" required aria-required="true" placeholder="Tell us about the rooms, approx. size, and timing."></textarea>
+            <div class="field-hint">The more detail you share, the more accurate our first quote will be.</div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary">Send Request</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="container newsletter">
+      <div class="newsletter-inner">
+        <div>
+          <h3>Trade tips & project ideas, in your inbox.</h3>
+          <p>Occasional emails only – no spam, just helpful tips on prepping, painting and planning your next project.</p>
+        </div>
+        <form class="newsletter-form" aria-label="Newsletter signup (placeholder)">
+          <input type="email" name="newsletter-email" placeholder="Your email address" aria-label="Email for newsletter" />
+          <button type="button" class="btn btn-outline">Join the list</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo-text-main" style="margin-bottom:0.3rem;">Top Coat Stoppers 21</div>
+        <p>Professional plasterboard & gib stopping for new builds, renovations and repairs.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Top Coat Stoppers 21. All rights reserved.</span>
+      <span>Proudly serving the Bay.</span>
+    </div>
+  </div>
+</footer>
+
+            
+            </body>
+</html>
