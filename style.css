@@ -609,6 +609,33 @@ section {
   opacity: 0;
   transition: opacity 0.18s ease;
 }
+.gallery-video-box {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.gallery-video-title {
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.gallery-video-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.15);
+  background: #000;
+}
+
+.gallery-video-wrapper video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
 
 .gallery-item::after {
   content: "View finish";
