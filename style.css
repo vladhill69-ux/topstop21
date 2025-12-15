@@ -681,3 +681,101 @@ footer{
   .services-grid, .pricing-grid{ grid-template-columns: 1fr; }
   .service-card, .pricing-card{ max-width:520px; }
 }
+/* =====================
+   TESTIMONIALS — Luxury Gold
+   ===================== */
+.testimonials-wrapper{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(212,175,55,.16) 0%, transparent 55%),
+    radial-gradient(circle at 85% 30%, rgba(212,175,55,.10) 0%, transparent 60%),
+    linear-gradient(135deg, rgba(8,8,10,.92), rgba(2,2,3,.96));
+  border-radius: 22px;
+  padding: 1.6rem 1.6rem 1.8rem;
+  border: 1px solid rgba(212,175,55,.55);
+  box-shadow:
+    0 0 22px rgba(212,175,55,.22),
+    0 0 55px rgba(212,175,55,.12),
+    0 18px 55px rgba(0,0,0,.85);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-wrapper::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(212,175,55,.10) 18%,
+    transparent 38%,
+    rgba(212,175,55,.08) 58%,
+    transparent 78%
+  );
+  opacity:.55;
+  pointer-events:none;
+}
+
+.testimonial-quote{
+  margin: 0 0 .9rem;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #f3f4f6;
+  text-shadow: 0 2px 20px rgba(0,0,0,.55);
+}
+
+.testimonial-stars{
+  display: inline-flex;
+  gap: .2rem;
+  margin: 0 0 .85rem;
+  padding: .35rem .8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.45);
+  background: rgba(0,0,0,.45);
+  box-shadow: 0 0 16px rgba(212,175,55,.18);
+}
+
+.testimonial-stars .star{
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
+  text-shadow: 0 0 18px rgba(212,175,55,.35);
+}
+
+.testimonial-name{
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--accent);
+  letter-spacing: .02em;
+}
+
+.testimonial-meta{
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .15rem;
+  margin-bottom: 1rem;
+}
+
+/* Dots: more “premium” */
+.testimonial-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.75);
+  background: rgba(0,0,0,.35);
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.testimonial-dot:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px rgba(212,175,55,.35);
+}
+
+.testimonial-dot.active{
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  border-color: rgba(212,175,55,.95);
+  box-shadow: 0 0 18px rgba(212,175,55,.45);
+}
+
