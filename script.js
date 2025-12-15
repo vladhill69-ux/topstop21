@@ -31,23 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Services cards fly-in on scroll
-  const servicesSection = document.querySelector("#services");
-  const cards = document.querySelectorAll(".service-card");
-  if (servicesSection && cards.length > 0) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            cards.forEach((c) => c.classList.add("is-in"));
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-    observer.observe(servicesSection);
-  }
+ 
 
   // Testimonials slider
   const testimonials = [
