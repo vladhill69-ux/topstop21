@@ -778,4 +778,31 @@ footer{
   border-color: rgba(212,175,55,.95);
   box-shadow: 0 0 18px rgba(212,175,55,.45);
 }
+/* =====================
+   NAV LINK BOUNCE (Luxury hover)
+   ===================== */
+.nav-links a{
+  position: relative;
+  transition: transform .18s cubic-bezier(.34,1.56,.64,1), color .18s ease;
+}
+
+/* Bounce on hover */
+.nav-links a:hover{
+  transform: translateY(-4px);
+  color: var(--accent);
+}
+
+/* Micro bounce settle */
+.nav-links a:hover::after{
+  transform: scaleX(1);
+}
+
+/* Optional: stronger bounce for CTA button */
+.nav-cta .btn{
+  transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease;
+}
+
+.nav-cta .btn:hover{
+  transform: translateY(-5px) scale(1.03);
+}
 
