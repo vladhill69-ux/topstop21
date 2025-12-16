@@ -67,6 +67,42 @@ body::before{
   mix-blend-mode:screen;
   filter: blur(0.5px) contrast(115%);
 }
+/* Flashier logo pulse */
+.logo-img{
+  border-radius: 50%;
+  padding: 8px;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  box-shadow:
+    0 0 18px rgba(212,175,55,.55),
+    0 0 45px rgba(212,175,55,.25);
+  animation: logoPulse 3.2s ease-in-out infinite;
+}
+
+/* Hover = stronger pop */
+.logo:hover .logo-img{
+  animation-play-state: paused;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 28px rgba(255,215,100,.85),
+    0 0 70px rgba(212,175,55,.55);
+}
+
+/* Pulse animation */
+@keyframes logoPulse{
+  0%, 100%{
+    transform: scale(1);
+    box-shadow:
+      0 0 16px rgba(212,175,55,.45),
+      0 0 38px rgba(212,175,55,.25);
+  }
+  50%{
+    transform: scale(1.04);
+    box-shadow:
+      0 0 26px rgba(255,225,120,.85),
+      0 0 70px rgba(212,175,55,.45);
+  }
+}
+
 /* Layout container */
 .container{
   width:100%;
