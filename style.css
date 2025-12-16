@@ -306,6 +306,57 @@ main > section{
   .hero-grid{ grid-template-columns: 1fr; }
   main > section{ min-height: auto; }
 }
+/* Full-width hero like bopplastering vibe */
+.hero--full{
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: clamp(5rem, 9vw, 7.5rem) 0;
+  overflow: hidden;
+}
+
+/* Your hero image as the main background */
+.hero--full .hero-bg{
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/imgs/att.RE7NnlcTaaGEltUBwWz-X1Qg4NEBVYtvPaZ8yz0Y9Bs.jpeg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* Dark overlay so gold text pops */
+.hero--full .hero-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(0,0,0,.35), rgba(0,0,0,.88) 70%),
+    linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.10) 100%);
+}
+
+/* Content sits above background */
+.hero--full .hero-content{
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hero-title{
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: .02em;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  margin: .6rem 0 .6rem;
+}
+
+/* (Optional) tighten subtitle on hero */
+.hero--full .hero-subtitle{
+  font-size: 1.05rem;
+  max-width: 46rem;
+}
+
 /* =====================
    SERVICES (Fly-in Cards, like Menu Boards)
    ===================== */
