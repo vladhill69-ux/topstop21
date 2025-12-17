@@ -629,6 +629,12 @@ main > section{
   transform: scale(1.02);
   transition: transform 0.25s ease;
 }
+@media (min-width: 900px) {
+  .gallery-video-wrapper {
+    max-width: 640px;
+  }
+}
+
 
  }
 /* =====================
