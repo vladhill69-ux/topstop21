@@ -586,7 +586,46 @@ main > section{
   border:1px solid rgba(212,175,55,.25);
   box-shadow:0 0 18px rgba(212,175,55,.15); background:#000;
 }
-.gallery-video-wrapper video{ width:100%; display:block; border-radius:12px; }
+/* =====================
+   GALLERY VIDEO (Fixed size, no stretch)
+   ===================== */
+
+.gallery-video-box {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.gallery-video-title {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Video container */
+.gallery-video-wrapper {
+  max-width: 520px;        /* 👈 controls box size */
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  border: 2px solid rgba(212,175,55,0.6);
+  box-shadow:
+    0 0 18px rgba(212,175,55,0.35),
+    0 20px 45px rgba(0,0,0,0.9);
+}
+
+/* Video itself */
+.gallery-video-wrapper video {
+  width: 100%;
+  height: auto;            /* 👈 CRITICAL: prevents stretching */
+  aspect-ratio: 16 / 9;   /* 👈 keeps correct shape */
+  object-fit: contain;
+  display: block;
+  background: #000;
+  border-radius: 14px;
+}
+ }
 /* =====================
    PRICING
    ===================== */
