@@ -81,7 +81,7 @@ body::before{
 /* Hover = stronger pop */
 .logo:hover .logo-img{
   animation-play-state: paused;
-  transform: scale(1.08);
+  transform: scale(1.09);
   box-shadow:
     0 0 28px rgba(255,215,100,.85),
     0 0 70px rgba(212,175,55,.55);
@@ -559,7 +559,7 @@ main > section{
 }
 
 .gallery-item:hover{
-  transform: scale(1.06);
+  transform: scale(1.10);
   z-index: 2; /* sit above neighbours */
   box-shadow: 0 26px 70px rgba(0,0,0,.95), 0 0 38px rgba(212,175,55,.35);
   border-color: rgba(212,175,55,.85);
