@@ -559,6 +559,25 @@ main > section{
   opacity: 1;
   box-shadow: 0 0 25px rgba(212,175,55,0.45);
 }
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;              /* 👈 controls uniform height */
+}
+
+.partner-logo img {
+  max-height: 70px;          /* 👈 keeps logos equal */
+  max-width: 140px;
+  object-fit: contain;
+}
 
 
 /* =====================
