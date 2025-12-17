@@ -625,6 +625,11 @@ main > section{
   background: #000;
   border-radius: 14px;
 }
+.gallery-video-wrapper:hover {
+  transform: scale(1.02);
+  transition: transform 0.25s ease;
+}
+
  }
 /* =====================
    PRICING
