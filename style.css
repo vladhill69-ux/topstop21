@@ -564,6 +564,8 @@ main > section{
   box-shadow: 0 26px 70px rgba(0,0,0,.95), 0 0 38px rgba(212,175,55,.35);
   border-color: rgba(212,175,55,.85);
 }
+.gallery-grid{ overflow: visible; }
+///end of hover section 
 
 /* Optional: keyboard accessibility (tab focus) */
 .gallery-item:focus-visible{
