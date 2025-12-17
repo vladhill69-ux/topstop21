@@ -541,8 +541,11 @@ main > section{
   max-width: 140px;
   max-height: 70px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.9);
-  opacity: 0.85;
+ .suppliers img {
+  filter: none;
+  opacity: 1;
+ }
+
   transition: 
     transform 0.25s ease,
     filter 0.25s ease,
