@@ -552,17 +552,32 @@ main > section{
   color:var(--accent); font-size:.85rem;
   opacity:0; transform:translateY(6px); transition:opacity .18s ease, transform .18s ease;
 }
+/* Make gallery tiles enlarge on hover */
+.gallery-item{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  transform: translateZ(0); /* helps smooth scaling */
+}
+
 .gallery-item:hover{
-  transform:translateY(-3px) scale(1.02);
-  box-shadow:0 22px 48px rgba(0,0,0,.95);
-  border-color: rgba(212,175,55,.7);
+  transform: scale(1.06);
+  z-index: 2; /* sit above neighbours */
+  box-shadow: 0 26px 70px rgba(0,0,0,.95), 0 0 38px rgba(212,175,55,.35);
+  border-color: rgba(212,175,55,.85);
 }
-.gallery-item:hover::before{ opacity:1; }
-.gallery-item:hover::after{ opacity:1; transform:translateY(0); }
-.gallery-video-box{ margin-top:2.5rem; text-align:center; }
-.gallery-video-title{
-  font-size:1.4rem; color:var(--accent); margin-bottom:1rem; font-weight:600;
+
+/* Optional: keyboard accessibility (tab focus) */
+.gallery-item:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  transform: scale(1.06);
+  z-index: 2;
 }
+
+/* Optional: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .gallery-item{ transition: none; }
+}
+
 .gallery-video-wrapper{
   max-width:800px; margin:0 auto;
   border-radius:12px; overflow:hidden;
