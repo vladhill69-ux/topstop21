@@ -2,6 +2,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // YEAR
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+// SERVICES reveal on scroll (fixes invisible cards)
+const serviceCards = document.querySelectorAll(".service-card");
+if (serviceCards.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-in");
+      });
+    },
+    { threshold: 0.15 }
+  );
+  serviceCards.forEach((card) => io.observe(card));
+}
 
   // Sticky header scroll effect
   const header = document.querySelector(".site-header");
