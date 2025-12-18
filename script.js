@@ -2,6 +2,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // YEAR
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // Manual gallery slider (no autoplay)
+const track = document.getElementById("galleryTrack");
+const prevArrow = document.querySelector(".gallery-arrow.prev");
+const nextArrow = document.querySelector(".gallery-arrow.next");
+
+if (track && prevArrow && nextArrow) {
+  const scrollByOne = (dir = 1) => {
+    const slide = track.querySelector(".gallery-slide");
+    const slideWidth = slide ? slide.getBoundingClientRect().width : 320;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 16;
+
+    track.scrollBy({
+      left: dir * (slideWidth + gap),
+      behavior: "smooth"
+    });
+  };
+
+  prevArrow.addEventListener("click", () => scrollByOne(-1));
+  nextArrow.addEventListener("click", () => scrollByOne(1));
+
+  // Keyboard (only when focused / in gallery)
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") scrollByOne(1);
+    if (e.key === "ArrowLeft") scrollByOne(-1);
+  });
+
+  // Optional: mouse wheel scroll horizontally when hovering
+  track.addEventListener("wheel", (e) => {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      track.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+}
+
 
   // Sticky header scroll effect
   window.addEventListener("scroll", () => {
