@@ -2,60 +2,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // YEAR
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-  // Manual gallery slider (no autoplay)
-const track = document.getElementById("galleryTrack");
-const prevArrow = document.querySelector(".gallery-arrow.prev");
-const nextArrow = document.querySelector(".gallery-arrow.next");
-
-if (track && prevArrow && nextArrow) {
-  const scrollByOne = (dir = 1) => {
-    const slide = track.querySelector(".gallery-slide");
-    const slideWidth = slide ? slide.getBoundingClientRect().width : 320;
-    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 16;
-
-    track.scrollBy({
-      left: dir * (slideWidth + gap),
-      behavior: "smooth"
-    });
-  };
-  window.addEventListener("scroll", () => {
-  const header = document.querySelector(".site-header");
-  if (!header) return;
-  header.classList.toggle("scrolled", window.scrollY > 40);
-});
-
-
-  prevArrow.addEventListener("click", () => scrollByOne(-1));
-  nextArrow.addEventListener("click", () => scrollByOne(1));
-
-  // Keyboard (only when focused / in gallery)
-  track.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") scrollByOne(1);
-    if (e.key === "ArrowLeft") scrollByOne(-1);
-  });
-
-  // Optional: mouse wheel scroll horizontally when hovering
-  track.addEventListener("wheel", (e) => {
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault();
-      track.scrollLeft += e.deltaY;
-    }
-  }, { passive: false });
-}
-
 
   // Sticky header scroll effect
+  const header = document.querySelector(".site-header");
   window.addEventListener("scroll", () => {
-    const header = document.querySelector(".site-header");
-    if (window.scrollY > 40) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-     
- 
+    if (!header) return;
+    if (window.scrollY > 40) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  });
 
-  // Testimonials slider
+  // Burger menu
+  const burger = document.getElementById("burgerButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (burger && mobileMenu) {
+    burger.addEventListener("click", () => {
+      const open = burger.classList.toggle("open");
+      mobileMenu.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    mobileMenu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        burger.classList.remove("open");
+        mobileMenu.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Testimonials slider (kept as-is)
   const testimonials = [
     {
       quote: "“Top Coat Stoppers 21 nailed our reno. The painters were stoked with the prep and we hit our move-in date easily.”",
@@ -73,63 +47,56 @@ if (track && prevArrow && nextArrow) {
       meta: "Office refit"
     }
   ];
+
   const quoteEl = document.getElementById("testimonialQuote");
   const nameEl = document.getElementById("testimonialName");
   const metaEl = document.getElementById("testimonialMeta");
   const dotEls = document.querySelectorAll(".testimonial-dot");
+
   function setTestimonial(index) {
+    if (!quoteEl || !nameEl || !metaEl) return;
     const t = testimonials[index];
     quoteEl.textContent = t.quote;
     nameEl.textContent = t.name;
     metaEl.textContent = t.meta;
     dotEls.forEach(dot => dot.classList.remove("active"));
-    dotEls[index].classList.add("active");
+    if (dotEls[index]) dotEls[index].classList.add("active");
   }
-  dotEls.forEach((dot, i) => {
-    dot.addEventListener("click", () => setTestimonial(i));
-  });
+
+  dotEls.forEach((dot, i) => dot.addEventListener("click", () => setTestimonial(i)));
+
   let testimonialIndex = 0;
+  setTestimonial(testimonialIndex);
   setInterval(() => {
     testimonialIndex = (testimonialIndex + 1) % testimonials.length;
     setTestimonial(testimonialIndex);
   }, 9000);
 
-  // FAQ accordion
-  document.querySelectorAll(".faq-item").forEach(item => {
-    const question = item.querySelector(".faq-question");
-    const toggle = item.querySelector(".faq-toggle");
-    question.addEventListener("click", () => {
-      const isOpen = item.classList.contains("open");
-      document.querySelectorAll(".faq-item").forEach(i => {
-        i.classList.remove("open");
-        const t = i.querySelector(".faq-toggle");
-        if (t) t.textContent = "+";
-      });
-      if (!isOpen) {
-        item.classList.add("open");
-        toggle.textContent = "–";
-      }
-    });
-  });
+  // Manual Gallery Slider (NO autoplay)
+  const track = document.getElementById("galleryTrack");
+  if (track) {
+    const prev = document.querySelector(".gallery-arrow.prev");
+    const next = document.querySelector(".gallery-arrow.next");
 
-  // Contact form validation
-  const contactForm = document.getElementById("contactForm");
-  const formStatus = document.getElementById("formStatus");
-  if (contactForm && formStatus) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = contactForm.name.value.trim();
-      const email = contactForm.email.value.trim();
-      const serviceType = contactForm.serviceType.value.trim();
-      const message = contactForm.message.value.trim();
-      if (!name || !email || !serviceType || !message) {
-        formStatus.textContent = "Please fill in all required fields (*) before sending.";
-        formStatus.style.color = "var(--danger)";
-        return;
-      }
-      formStatus.textContent = "Thanks for your message! We'll get back to you soon.";
-      formStatus.style.color = "var(--accent)";
-      contactForm.reset();
+    function getStep() {
+      const first = track.querySelector(".gallery-slide");
+      if (!first) return 300;
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+      return first.getBoundingClientRect().width + gap;
+    }
+
+    function scrollBySlides(dir) {
+      track.scrollBy({ left: dir * getStep(), behavior: "smooth" });
+    }
+
+    if (prev) prev.addEventListener("click", () => scrollBySlides(-1));
+    if (next) next.addEventListener("click", () => scrollBySlides(1));
+
+    // Keyboard support when focused
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") scrollBySlides(1);
+      if (e.key === "ArrowLeft") scrollBySlides(-1);
     });
   }
 });
