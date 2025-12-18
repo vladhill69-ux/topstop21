@@ -1266,3 +1266,10 @@ footer{
   font-weight: 600;
   color: #f3f4f6;
 }
+/* Mobile fallback: always show service cards */
+@media (max-width: 860px){
+  .service-card{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
