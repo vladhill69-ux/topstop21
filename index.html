@@ -145,12 +145,34 @@
           <p class="section-subtitle">A few recent finishes and works-in-progress.</p>
         </div>
 
-        <div class="gallery-grid" aria-label="Project gallery">
-          <div class="gallery-item" style="background-image:url('assets/imgs/att.FS4KQvU3CC7RKfcUXPO5jqu8aSedgnnDFDaeHPeGXZA.jpeg');"></div>
-          <div class="gallery-item" style="background-image:url('assets/imgs/att.wkw8fRfvzL4BdM8qFBc6S42utHyL_ZymqGCNKlol10g.jpeg');"></div>
-          <div class="gallery-item" style="background-image:url('assets/imgs/att.YzAzo_wGN0WAdK9AX65CV0zv_t6nu-Y2IB-KgREKV_s.jpeg');"></div>
-          <div class="gallery-item" style="background-image:url('assets/imgs/att.sJi5lk8Pqel8ZClCJ9XcbqlM-3oGoJD4WL_HYYt3_j0.jpeg');"></div>
-        </div>
+        <div class="revolve" aria-label="Project gallery">
+  <button class="revolve-btn prev" type="button" aria-label="Previous photo">‹</button>
+
+  <div class="revolve-viewport">
+    <div class="revolve-track" id="revolveTrack">
+      <figure class="revolve-slide is-active" style="--i:0">
+        <img src="assets/imgs/att.FS4KQvU3CC7RKfcUXPO5jqu8aSedgnnDFDaeHPeGXZA.jpeg" alt="Recent plasterboard stopping work">
+      </figure>
+
+      <figure class="revolve-slide" style="--i:1">
+        <img src="assets/imgs/att.wkw8fRfvzL4BdM8qFBc6S42utHyL_ZymqGCNKlol10g.jpeg" alt="Preparing plaster mix">
+      </figure>
+
+      <figure class="revolve-slide" style="--i:2">
+        <img src="assets/imgs/att.YzAzo_wGN0WAdK9AX65CV0zv_t6nu-Y2IB-KgREKV_s.jpeg" alt="Skim coat in progress">
+      </figure>
+
+      <figure class="revolve-slide" style="--i:3">
+        <img src="assets/imgs/att.sJi5lk8Pqel8ZClCJ9XcbqlM-3oGoJD4WL_HYYt3_j0.jpeg" alt="Finishing a joint">
+      </figure>
+    </div>
+  </div>
+
+  <button class="revolve-btn next" type="button" aria-label="Next photo">›</button>
+
+  <div class="revolve-dots" id="revolveDots" aria-label="Gallery navigation"></div>
+</div>
+
 
        <div class="gallery-video-box">
   <h3 class="gallery-video-title">See Us In Action</h3>
