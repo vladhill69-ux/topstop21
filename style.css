@@ -1262,4 +1262,19 @@ footer{
   text-align: center;
   width: 100%;
 }
+#services .service-card{
+  margin-bottom: 2rem;
+}
+
+#services h4{
+  margin-top: 1rem;
+  color: var(--accent);
+}
+
+.service-highlight{
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
 
