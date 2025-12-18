@@ -1266,5 +1266,24 @@ footer{
   font-weight: 600;
   color: #f3f4f6;
 }
+//white color 
+/* =====================
+   SUPPLIERS — LIGHT SECTION
+   ===================== */
+#suppliers {
+  background: #ffffff;
+  color: #111;
+}
 
+#suppliers .section-kicker {
+  color: #b8962e; /* gold still works on white */
+}
+
+#suppliers .section-title {
+  color: #111;
+}
+
+#suppliers .section-subtitle {
+  color: #444;
+}
 
