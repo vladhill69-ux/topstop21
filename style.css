@@ -694,6 +694,15 @@ main > section{
     max-width: 640px;
   }
 }
+@media (min-width: 900px) {
+  .gallery-video-wrapper {
+    max-width: 640px;
+  }
+}
+
+/* =====================
+   PRICING
+   ===================== */
 
 
  
