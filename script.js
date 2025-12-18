@@ -99,4 +99,45 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.key === "ArrowLeft") scrollBySlides(-1);
     });
   }
+  // =====================
+// GALLERY LIGHTBOX
+// =====================
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const closeBtn = document.querySelector(".lightbox-close");
+
+// Click gallery slide → open
+document.querySelectorAll(".gallery-slide, .gallery-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const bg = item.style.backgroundImage;
+    if (!bg) return;
+
+    const imgUrl = bg.slice(5, -2); // remove url("...")
+    lightboxImg.src = imgUrl;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// Close button
+closeBtn.addEventListener("click", closeLightbox);
+
+// Click outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});
+
+function closeLightbox(){
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+  document.body.style.overflow = "";
+}
+
 });
