@@ -31,7 +31,7 @@ img { max-width: 100%; display: block; height: auto; }
 a { color: inherit; }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px;
+  scroll-padding-top: 150px;
 }
 /* â”€â”€â”€ BODY â”€â”€â”€ */
 body {
@@ -110,31 +110,56 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: .75rem 0;
+  padding: .6rem 0;
 }
-.logo { display: inline-flex; align-items: center; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 6px;
+}
+/* Slowly rotating gold ring â€” sits behind the logo for a bit of ceremony/flare */
+.logo::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    var(--gold) 0deg, transparent 55deg,
+    var(--gold) 100deg, transparent 160deg,
+    var(--gold) 210deg, transparent 270deg,
+    var(--gold) 330deg, var(--gold) 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
+          mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
+  animation: logoSpin 7s linear infinite;
+  pointer-events: none;
+}
 .logo-img {
-  height: clamp(52px, 5vw, 64px);
+  position: relative;
+  z-index: 1;
+  height: clamp(78px, 8vw, 108px);
   width: auto;
   border-radius: 50%;
-  padding: 4px;
+  padding: 5px;
   background: var(--bg-soft);
-  border: 2px solid var(--gold);
-  box-shadow: 0 0 0 3px rgba(217,182,87,.16), 0 6px 16px rgba(217,182,87,.35);
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(217,182,87,.18), 0 8px 22px rgba(217,182,87,.4);
   animation: logoGlow 3.4s ease-in-out infinite;
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .logo:hover .logo-img {
-  transform: scale(1.06);
+  transform: scale(1.08);
   animation-play-state: paused;
-  box-shadow: 0 0 0 5px rgba(217,182,87,.25), 0 10px 26px rgba(217,182,87,.55);
+  box-shadow: 0 0 0 6px rgba(217,182,87,.28), 0 14px 34px rgba(217,182,87,.6);
 }
+.logo:hover::before { animation-duration: 2s; }
 @keyframes logoGlow {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(217,182,87,.16), 0 6px 16px rgba(217,182,87,.3); }
-  50%      { box-shadow: 0 0 0 6px rgba(217,182,87,.26), 0 8px 22px rgba(217,182,87,.5); }
+  0%, 100% { box-shadow: 0 0 0 4px rgba(217,182,87,.18), 0 8px 22px rgba(217,182,87,.35); }
+  50%      { box-shadow: 0 0 0 8px rgba(217,182,87,.28), 0 10px 28px rgba(217,182,87,.55); }
 }
+@keyframes logoSpin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
-  .logo-img { animation: none; }
+  .logo-img, .logo::before { animation: none; }
 }
 .nav-links {
   display: flex;
@@ -194,7 +219,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .mobile-menu a { text-decoration: none; font-size: .98rem; font-weight: 600; color: var(--dark); }
 .mobile-cta-btn { margin-top: .4rem; align-self: flex-start; }
 @media (max-width: 860px) {
-  html { scroll-padding-top: 110px; }
+  html { scroll-padding-top: 130px; }
   .nav-links, .nav-cta { display: none; }
   .burger { display: inline-flex; }
   .mobile-menu.open { display: flex; }
