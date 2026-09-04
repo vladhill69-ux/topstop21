@@ -119,7 +119,22 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   border-radius: 50%;
   padding: 4px;
   background: var(--bg-soft);
-  border: 1px solid var(--border);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 3px rgba(217,182,87,.16), 0 6px 16px rgba(217,182,87,.35);
+  animation: logoGlow 3.4s ease-in-out infinite;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.logo:hover .logo-img {
+  transform: scale(1.06);
+  animation-play-state: paused;
+  box-shadow: 0 0 0 5px rgba(217,182,87,.25), 0 10px 26px rgba(217,182,87,.55);
+}
+@keyframes logoGlow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(217,182,87,.16), 0 6px 16px rgba(217,182,87,.3); }
+  50%      { box-shadow: 0 0 0 6px rgba(217,182,87,.26), 0 8px 22px rgba(217,182,87,.5); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-img { animation: none; }
 }
 .nav-links {
   display: flex;
@@ -253,8 +268,10 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .hero--full .hero-overlay {
   position: absolute;
   inset: 0;
+  /* Just enough tint (warm near-black, not flat black) to keep the hero text readable â€”
+     the photo itself should still read as a photo, not a black panel with an image ghosted behind it. */
   background:
-    linear-gradient(100deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.84) 42%, rgba(10,10,10,.45) 75%, rgba(10,10,10,.68) 100%);
+    linear-gradient(100deg, rgba(20,16,9,.78) 0%, rgba(20,16,9,.5) 40%, rgba(20,16,9,.08) 72%, rgba(20,16,9,.22) 100%);
 }
 .hero--full .hero-content {
   position: relative;
@@ -270,22 +287,25 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   font-size: clamp(2.4rem, 4.8vw, 3.9rem);
   margin: .9rem 0 1rem;
   color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0,0,0,.5);
 }
 .hero--full .hero-subtitle {
   font-size: 1.08rem;
   max-width: 46rem;
-  color: #dcdcda;
+  color: #e4e3df;
   margin: 0 0 1.6rem;
+  text-shadow: 0 1px 12px rgba(0,0,0,.45);
 }
 .hero-cta { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
 .hero-meta {
   display: flex;
   gap: .9rem 1.6rem;
   flex-wrap: wrap;
-  color: #b9b8b3;
+  color: #eae9e5;
   font-size: .9rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,.18);
+  border-top: 1px solid rgba(255,255,255,.28);
+  text-shadow: 0 1px 10px rgba(0,0,0,.45);
 }
 .hero-meta-item { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; }
 .hero-meta-dot {
