@@ -31,7 +31,7 @@ img { max-width: 100%; display: block; height: auto; }
 a { color: inherit; }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 150px;
+  scroll-padding-top: 190px;
 }
 /* â”€â”€â”€ BODY â”€â”€â”€ */
 body {
@@ -122,7 +122,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .logo::before {
   content: "";
   position: absolute;
-  inset: -3px;
+  inset: -5px;
   border-radius: 50%;
   background: conic-gradient(from 0deg,
     var(--gold) 0deg, transparent 55deg,
@@ -137,7 +137,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .logo-img {
   position: relative;
   z-index: 1;
-  height: clamp(96px, 9vw, 130px);
+  height: clamp(120px, 12vw, 168px);
   width: auto;
   border-radius: 50%;
   padding: 5px;
@@ -219,7 +219,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .mobile-menu a { text-decoration: none; font-size: .98rem; font-weight: 600; color: var(--dark); }
 .mobile-cta-btn { margin-top: .4rem; align-self: flex-start; }
 @media (max-width: 860px) {
-  html { scroll-padding-top: 130px; }
+  html { scroll-padding-top: 170px; }
   .nav-links, .nav-cta { display: none; }
   .burger { display: inline-flex; }
   .mobile-menu.open { display: flex; }
