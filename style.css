@@ -137,7 +137,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .logo-img {
   position: relative;
   z-index: 1;
-  height: clamp(78px, 8vw, 108px);
+  height: clamp(96px, 9vw, 130px);
   width: auto;
   border-radius: 50%;
   padding: 5px;
