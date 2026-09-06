@@ -1,5 +1,5 @@
 /* ================================
-   TOP COAT STOPPERS 21 â€” STYLESHEET
+   TOP COAT STOPPERS 21 — STYLESHEET
    Light, bold theme
    ================================ */
 :root {
@@ -24,7 +24,7 @@
   --shadow:      0 14px 34px rgba(0,0,0,.12);
   --shadow-lg:   0 26px 60px rgba(0,0,0,.2);
 }
-/* â”€â”€â”€ RESET â”€â”€â”€ */
+/* ─── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 img { max-width: 100%; display: block; height: auto; }
@@ -33,7 +33,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 190px;
 }
-/* â”€â”€â”€ BODY â”€â”€â”€ */
+/* ─── BODY ─── */
 body {
   font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
@@ -41,19 +41,19 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
 }
-/* â”€â”€â”€ CONTAINER â”€â”€â”€ */
+/* ─── CONTAINER ─── */
 .container {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
-/* â”€â”€â”€ SECTIONS â”€â”€â”€ */
+/* ─── SECTIONS ─── */
 main > section {
   padding: clamp(3.5rem, 7vw, 6rem) 0;
 }
 main > section:nth-of-type(even) { background: var(--bg-soft); }
-/* â”€â”€â”€ TYPOGRAPHY â”€â”€â”€ */
+/* ─── TYPOGRAPHY ─── */
 .section-header { margin-bottom: 2.5rem; text-align: center; }
 .section-kicker {
   display: inline-block;
@@ -78,7 +78,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   color: var(--muted);
   font-size: 1.02rem;
 }
-/* â”€â”€â”€ TOPBAR (bold black strip) â”€â”€â”€ */
+/* ─── TOPBAR (bold black strip) ─── */
 .topbar { background: var(--dark); color: var(--on-dark); }
 .topbar-inner {
   display: flex;
@@ -96,7 +96,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   .topbar-inner { justify-content: center; }
   .topbar-item:first-child { display: none; }
 }
-/* â”€â”€â”€ HEADER / NAV â”€â”€â”€ */
+/* ─── HEADER / NAV ─── */
 .site-header {
   position: sticky;
   top: 0;
@@ -118,7 +118,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   position: relative;
   padding: 6px;
 }
-/* Slowly rotating gold ring â€” sits behind the logo for a bit of ceremony/flare */
+/* Slowly rotating gold ring — sits behind the logo for a bit of ceremony/flare */
 .logo::before {
   content: "";
   position: absolute;
@@ -224,7 +224,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   .burger { display: inline-flex; }
   .mobile-menu.open { display: flex; }
 }
-/* â”€â”€â”€ BUTTONS â€” bold, flat, rectangular â”€â”€â”€ */
+/* ─── BUTTONS — bold, flat, rectangular ─── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -271,7 +271,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   color: var(--dark);
   border-color: #ffffff;
 }
-/* â”€â”€â”€ HERO â”€â”€â”€ */
+/* ─── HERO ─── */
 .hero { background: var(--dark); }
 .hero--full {
   position: relative;
@@ -293,7 +293,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .hero--full .hero-overlay {
   position: absolute;
   inset: 0;
-  /* Just enough tint (warm near-black, not flat black) to keep the hero text readable â€”
+  /* Just enough tint (warm near-black, not flat black) to keep the hero text readable —
      the photo itself should still read as a photo, not a black panel with an image ghosted behind it. */
   background:
     linear-gradient(100deg, rgba(20,16,9,.78) 0%, rgba(20,16,9,.5) 40%, rgba(20,16,9,.08) 72%, rgba(20,16,9,.22) 100%);
@@ -352,7 +352,26 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   letter-spacing: .03em;
   color: var(--gold-ink);
 }
-/* â”€â”€â”€ ABOUT â”€â”€â”€ */
+/* ─── ABOUT ─── */
+#about { position: relative; overflow: hidden; }
+#about .container { position: relative; z-index: 1; }
+/* Ambient floating gold glow — decorative, purely atmospheric */
+.about-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: .3;
+  pointer-events: none;
+  background: radial-gradient(circle, var(--gold), transparent 70%);
+  animation: aboutFloat 11s ease-in-out infinite;
+  z-index: 0;
+}
+.about-glow--1 { width: 360px; height: 360px; top: -120px; left: -120px; }
+.about-glow--2 { width: 300px; height: 300px; bottom: -100px; right: -100px; animation-delay: -5.5s; }
+@keyframes aboutFloat {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  50%      { transform: translate(24px,-18px) scale(1.1); }
+}
 .about-merged-card {
   margin-top: 1.2rem;
   background: var(--panel);
@@ -363,6 +382,55 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.6rem, 3vw, 2.8rem);
+}
+/* Scroll-reveal entrance — progressively enhanced: only kicks in once JS has
+   confirmed it can run (html.js) and .in-view is added by the observer, so a
+   no-JS visitor always sees the finished section, never a hidden one. */
+html.js .about-merged-card.reveal-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+html.js .about-merged-card.reveal-card.in-view {
+  opacity: 1;
+  transform: none;
+}
+html.js .reveal-card .about-list li,
+html.js .reveal-card .about-pill,
+html.js .reveal-card .process-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+html.js .reveal-card.in-view .about-list li,
+html.js .reveal-card.in-view .about-pill,
+html.js .reveal-card.in-view .process-item {
+  opacity: 1;
+  transform: none;
+}
+html.js .reveal-card .about-list li:nth-child(1) { transition-delay: .15s; }
+html.js .reveal-card .about-list li:nth-child(2) { transition-delay: .25s; }
+html.js .reveal-card .about-list li:nth-child(3) { transition-delay: .35s; }
+html.js .reveal-card .about-list li:nth-child(4) { transition-delay: .45s; }
+html.js .reveal-card .about-pill:nth-child(1) { transition-delay: .5s; }
+html.js .reveal-card .about-pill:nth-child(2) { transition-delay: .56s; }
+html.js .reveal-card .about-pill:nth-child(3) { transition-delay: .62s; }
+html.js .reveal-card .about-pill:nth-child(4) { transition-delay: .68s; }
+html.js .reveal-card .about-pill:nth-child(5) { transition-delay: .74s; }
+html.js .reveal-card .about-pill:nth-child(6) { transition-delay: .8s; }
+html.js .reveal-card .process-item:nth-child(1) { transition-delay: .2s; }
+html.js .reveal-card .process-item:nth-child(2) { transition-delay: .38s; }
+html.js .reveal-card .process-item:nth-child(3) { transition-delay: .56s; }
+html.js .reveal-card .process-item:nth-child(4) { transition-delay: .74s; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .about-merged-card.reveal-card,
+  html.js .reveal-card .about-list li,
+  html.js .reveal-card .about-pill,
+  html.js .reveal-card .process-item,
+  .about-glow {
+    opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important;
+  }
+  .about-glow { opacity: .3 !important; }
 }
 .about-merged-card h3,
 .about-merged-card h4 {
@@ -381,19 +449,45 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   position: relative;
   padding-left: 1.4rem;
   margin: .65rem 0;
+  transition: transform .2s ease, color .2s ease;
+}
+.about-list li:hover {
+  transform: translateX(4px);
+  color: var(--dark);
 }
 .about-list li::before {
   content: "";
   position: absolute; left: 0; top: .5rem;
   width: 8px; height: 8px;
   background: var(--gold);
+  transition: transform .2s ease;
 }
-.process-steps { display: grid; gap: 1.1rem; }
+.about-list li:hover::before { transform: scale(1.4); }
+/* Process timeline — a gold rail "draws" downward through the numbered steps on reveal */
+.process-steps { display: grid; gap: 1.1rem; position: relative; }
+.process-steps::before {
+  content: "";
+  position: absolute;
+  left: 15px; top: 16px; bottom: 16px;
+  width: 2px;
+  background: var(--border-strong);
+}
+.process-steps::after {
+  content: "";
+  position: absolute;
+  left: 15px; top: 16px;
+  width: 2px; height: 0;
+  background: var(--gold);
+  transition: height 1.3s ease .4s;
+}
+html.js .reveal-card.in-view .process-steps::after { height: calc(100% - 32px); }
+html:not(.js) .process-steps::after { height: calc(100% - 32px); }
 .process-item {
   display: grid;
   grid-template-columns: auto minmax(0,1fr);
   gap: .9rem;
   align-items: flex-start;
+  position: relative;
 }
 .process-number {
   width: 32px; height: 32px;
@@ -402,6 +496,15 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   display: flex; align-items: center; justify-content: center;
   font-size: .92rem; font-weight: 800; color: var(--on-dark);
   flex: none;
+  position: relative;
+  z-index: 1;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.process-item:hover .process-number {
+  transform: scale(1.12);
+  background: var(--gold);
+  color: var(--gold-ink);
+  box-shadow: 0 0 0 5px rgba(217,182,87,.22);
 }
 .process-content h4 { margin: 0 0 .2rem; font-size: .98rem; color: var(--ink); }
 .process-content p  { margin: 0; font-size: .88rem; color: var(--muted); }
@@ -410,8 +513,16 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   font-size: .78rem; font-weight: 700; padding: .32rem .85rem; border-radius: var(--radius-sm);
   border: 1px solid var(--border-strong);
   background: var(--bg-soft); color: var(--dark);
+  transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
-/* â”€â”€â”€ SERVICES â”€â”€â”€ */
+.about-pill:hover {
+  transform: translateY(-3px);
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--gold-ink);
+  box-shadow: 0 8px 18px rgba(217,182,87,.35);
+}
+/* ─── SERVICES ─── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -436,7 +547,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 @media (max-width: 860px) {
   .service-card { opacity: 1 !important; transform: none !important; }
 }
-/* Card styles â€” bold flat top bar, light body */
+/* Card styles — bold flat top bar, light body */
 .service-card {
   width: 100%;
   background: var(--panel);
@@ -480,7 +591,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   .services-grid { grid-template-columns: 1fr; }
   .service-card  { max-width: 520px; }
 }
-/* â”€â”€â”€ TESTIMONIALS â”€â”€â”€ */
+/* ─── TESTIMONIALS ─── */
 .testimonials-wrapper {
   background: var(--panel);
   border-radius: var(--radius-lg);
@@ -517,7 +628,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 }
 .testimonial-dot:hover { transform: translateY(-1px); }
 .testimonial-dot.active { background: var(--gold); }
-/* â”€â”€â”€ SUPPLIERS â”€â”€â”€ */
+/* ─── SUPPLIERS ─── */
 .suppliers-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -541,7 +652,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 }
 @media (max-width: 900px) { .suppliers-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 520px) { .suppliers-grid { grid-template-columns: 1fr; } }
-/* â”€â”€â”€ GALLERY â€” big, bold photo real estate â”€â”€â”€ */
+/* ─── GALLERY — big, bold photo real estate ─── */
 .gallery-slider {
   position: relative;
   margin-top: 1.75rem;
@@ -565,7 +676,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   scroll-snap-align: center;
   border-radius: var(--radius); overflow: hidden;
   background-position: center; background-size: cover; background-repeat: no-repeat;
-  /* fallback colour so a tile still looks designed if a photo hasn't been added yet â€”
+  /* fallback colour so a tile still looks designed if a photo hasn't been added yet —
      background-color is a separate property from the inline background-image on each
      slide, so it shows through whenever that image is missing or fails to load */
   background-color: var(--bg-soft);
@@ -604,7 +715,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 @media (min-width: 1100px) {
   .gallery-track { grid-auto-columns: minmax(520px, 46vw); }
 }
-/* â”€â”€â”€ GALLERY VIDEO â”€â”€â”€ */
+/* ─── GALLERY VIDEO ─── */
 .gallery-video-box {
   margin-top: 3.2rem;
   text-align: center;
@@ -627,7 +738,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   aspect-ratio: 16 / 9; object-fit: contain;
   display: block; background: var(--dark);
 }
-/* â”€â”€â”€ LIGHTBOX â”€â”€â”€ */
+/* ─── LIGHTBOX ─── */
 .lightbox {
   position: fixed; inset: 0;
   background: rgba(16,23,33,.92);
@@ -648,7 +759,7 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   background: none; border: none; cursor: pointer; line-height: 1;
 }
 .lightbox-close:hover { color: var(--gold); }
-/* â”€â”€â”€ CONTACT â”€â”€â”€ */
+/* ─── CONTACT ─── */
 .contact-box {
   width: 100%; max-width: 760px;
   margin: 0 auto; text-align: center;
@@ -731,7 +842,7 @@ textarea { min-height: 120px; resize: vertical; }
 .form-status.success { color: #1e8e5a; }
 .form-status.error   { color: #c62828; }
 @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
-/* â”€â”€â”€ FOOTER â€” bold black block â”€â”€â”€ */
+/* ─── FOOTER — bold black block ─── */
 footer {
   padding: 2.6rem 0;
   background: var(--dark);
@@ -742,7 +853,7 @@ footer {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem;
 }
 .footer-bottom span:first-child { color: #ffffff; font-weight: 600; }
-/* â”€â”€â”€ FLOATING CALL BUTTON â”€â”€â”€ */
+/* ─── FLOATING CALL BUTTON ─── */
 .call-now-btn {
   position: fixed;
   bottom: 1.25rem; right: 1.25rem;
@@ -762,3 +873,4 @@ footer {
   box-shadow: var(--shadow-lg);
 }
 @media (max-width: 768px) { .call-now-btn { display: flex; } }
+ 
