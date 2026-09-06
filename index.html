@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plasterer Tauranga & Bay of Plenty | Gib Stopping & Skim Coating – Top Coat Stoppers 21</title>
   <meta name="description" content="Professional plasterer in Tauranga & the Bay of Plenty. Gib stopping, skim coating, repairs and Level 4–5 finishes for new builds and renovations. Get a free quote today." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
+  <noscript><style>.service-card{opacity:1!important;transform:none!important;}</style></noscript>
   <script defer src="script.js"></script>
-
   <!-- Google Analytics — replace G-XXXXXXXXXX with your real ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -22,11 +21,15 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 </head>
-
 <body id="top">
-
   <!-- ─── HEADER ─── -->
   <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-item">Licensed &amp; Insured &nbsp;·&nbsp; Bay of Plenty Wide</span>
+        <a class="topbar-item topbar-phone" href="tel:+64220282757">+64 22 028 2757</a>
+      </div>
+    </div>
     <div class="container">
       <nav class="nav" aria-label="Main navigation">
         <a href="#top" class="logo" aria-label="Top Coat Stoppers 21 home">
@@ -49,7 +52,6 @@
           <div class="burger-lines"></div>
         </button>
       </nav>
-
       <div class="mobile-menu" id="mobileMenu">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -60,33 +62,26 @@
       </div>
     </div>
   </header>
-
   <main>
-
     <!-- ─── HERO ─── -->
     <section class="hero hero--full" aria-labelledby="hero-heading">
       <div class="hero-bg"      aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
-
       <div class="container hero-content">
         <div class="badge">
-          <span>⭐ Tauranga's Trusted Plastering Specialists</span>
+          <span>Tauranga's Trusted Plastering Specialists</span>
         </div>
-
         <h1 id="hero-heading" class="hero-title">
           Premium Plastering<br>for the Bay of Plenty
         </h1>
-
         <p class="hero-subtitle">
           Expert Gib stopping, skim coating, and Level 4–5 finishes for new builds and renovations.
           Serving Tauranga, Mount Maunganui, Papamoa, Te Puke, and beyond — on time, every time.
         </p>
-
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
           <a href="#gallery" class="btn btn-outline">View Our Work</a>
         </div>
-
         <div class="hero-meta">
           <span class="hero-meta-item"><span class="hero-meta-dot"></span>Licensed &amp; Insured</span>
           <span class="hero-meta-item"><span class="hero-meta-dot"></span>Level 4–5 Finishes</span>
@@ -95,9 +90,10 @@
         </div>
       </div>
     </section>
-
     <!-- ─── ABOUT ─── -->
     <section id="about" aria-labelledby="about-heading">
+      <div class="about-glow about-glow--1" aria-hidden="true"></div>
+      <div class="about-glow about-glow--2" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
           <div class="section-kicker">About Us</div>
@@ -107,8 +103,7 @@
             delivered promptly and in line with rigorous industry benchmarks.
           </p>
         </div>
-
-        <div class="about-merged-card">
+        <div class="about-merged-card reveal-card">
           <!-- Left: Who we are -->
           <div>
             <h3>Who We Are</h3>
@@ -128,7 +123,6 @@
               <span class="about-pill">New Builds</span>
             </div>
           </div>
-
           <!-- Right: Our process -->
           <div>
             <h4>Our Process</h4>
@@ -166,7 +160,6 @@
         </div>
       </div>
     </section>
-
     <!-- ─── SERVICES ─── -->
     <section id="services" aria-labelledby="services-heading">
       <div class="container">
@@ -177,10 +170,14 @@
             Transform rough drywall into a flawless foundation for premium paint finishes.
           </p>
         </div>
-
         <div class="services-grid">
           <article class="service-card">
-            <div class="card-icon">🏠</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.5 10v9a1 1 0 0 0 1 1H10v-5.5a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2V20h3.5a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3>Gib Stopping &amp; Finishing</h3>
             <p>Turn rough drywall into a flawless base for your perfect paint. Durable, smooth, and stunning.</p>
             <ul>
@@ -194,9 +191,13 @@
               <a class="btn btn-outline" href="#contact">Get a Quote</a>
             </div>
           </article>
-
           <article class="service-card">
-            <div class="card-icon">✨</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>Level 2–5 Finishes</h3>
             <p>Tailored finishing options from basic to premium — whatever your project needs.</p>
             <ul>
@@ -209,9 +210,13 @@
               <a class="btn btn-outline" href="#contact">Customise yours</a>
             </div>
           </article>
-
           <article class="service-card">
-            <div class="card-icon">📐</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20h16M9 20v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
             <h3>GIB Cove Installs</h3>
             <p>Crisp, clean coving for a polished, professional edge to any room.</p>
             <ul>
@@ -227,7 +232,6 @@
         </div>
       </div>
     </section>
-
     <!-- ─── TESTIMONIALS ─── -->
     <section id="testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
@@ -236,7 +240,6 @@
           <h2 id="testimonials-heading" class="section-title">What clients say</h2>
           <p class="section-subtitle">Real feedback from builders and homeowners across the Bay of Plenty.</p>
         </div>
-
         <div class="testimonials-wrapper">
           <div class="testimonial" aria-live="polite">
             <p class="testimonial-quote" id="testimonialQuote">
@@ -256,7 +259,6 @@
         </div>
       </div>
     </section>
-
     <!-- ─── SUPPLIERS ─── -->
     <section id="suppliers" aria-labelledby="suppliers-heading">
       <div class="container">
@@ -278,7 +280,6 @@
         </div>
       </div>
     </section>
-
     <!-- ─── GALLERY ─── -->
     <section id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
@@ -287,7 +288,6 @@
           <h2 id="gallery-heading" class="section-title">Recent Work</h2>
           <p class="section-subtitle">A few recent finishes and works-in-progress from around the Bay.</p>
         </div>
-
         <div class="gallery-slider" aria-label="Project gallery slider">
           <button class="gallery-arrow prev" type="button" aria-label="Previous image">‹</button>
           <div class="gallery-track" id="galleryTrack" tabindex="0" aria-label="Scrollable gallery">
@@ -298,7 +298,6 @@
           </div>
           <button class="gallery-arrow next" type="button" aria-label="Next image">›</button>
         </div>
-
         <div class="gallery-video-box">
           <h3 class="gallery-video-title">See Us In Action</h3>
           <div class="gallery-video-wrapper">
@@ -310,7 +309,6 @@
         </div>
       </div>
     </section>
-
     <!-- ─── CONTACT ─── -->
     <section id="contact" aria-labelledby="contact-heading">
       <div class="container">
@@ -319,7 +317,6 @@
           <p class="section-subtitle">
             Call or email us — or fill out the form below and we'll get back to you with a fair, competitive quote.
           </p>
-
           <div class="contact-details">
             <div>
               <span>Phone</span>
@@ -330,7 +327,6 @@
               <a href="mailto:info@topcoatstoppers21.co.nz">info@topcoatstoppers21.co.nz</a>
             </div>
           </div>
-
           <!--
             Form powered by Web3Forms (free — 250 submissions/month on static sites).
             Setup: go to https://web3forms.com, enter your email, copy the access_key,
@@ -340,7 +336,6 @@
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <input type="hidden" name="subject"    value="New Quote Request — Top Coat Stoppers 21">
             <input type="checkbox" name="botcheck" style="display:none">
-
             <div class="form-row">
               <div>
                 <label for="cf-name">Full Name <span class="req">*</span></label>
@@ -353,13 +348,11 @@
                        placeholder="+64 22 000 0000" autocomplete="tel">
               </div>
             </div>
-
             <div class="form-field">
               <label for="cf-email">Email Address <span class="req">*</span></label>
               <input type="email" id="cf-email" name="email" required
                      placeholder="you@example.com" autocomplete="email">
             </div>
-
             <div class="form-field">
               <label for="cf-service">Service Needed</label>
               <select id="cf-service" name="service">
@@ -372,13 +365,11 @@
                 <option>Other / Not Sure</option>
               </select>
             </div>
-
             <div class="form-field">
               <label for="cf-message">Job Details</label>
               <textarea id="cf-message" name="message"
                 placeholder="Tell us about your project — size, location, timeline, any other details…"></textarea>
             </div>
-
             <div class="form-footer">
               <button type="submit" class="btn btn-primary" id="submitBtn">Send Message →</button>
               <p class="form-status" id="formStatus" aria-live="polite"></p>
@@ -387,11 +378,12 @@
         </div>
       </div>
     </section>
-
   </main>
-
-  <a class="call-now-btn" href="tel:+64220282757" aria-label="Call now">📞</a>
-
+  <a class="call-now-btn" href="tel:+64220282757" aria-label="Call now">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6.6 3.5 9 9l-2 1.5a11 11 0 0 0 5.5 5.5L14 14l5.5 2.4v3a1.6 1.6 0 0 1-1.7 1.6A17 17 0 0 1 3 5.7 1.6 1.6 0 0 1 4.6 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+  </a>
   <footer>
     <div class="container">
       <div class="footer-bottom">
@@ -400,7 +392,6 @@
       </div>
     </div>
   </footer>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -413,11 +404,27 @@
     "serviceType": ["Plasterboard stopping","Gib stopping","Skim coating","Interior plaster repairs"]
   }
   </script>
-
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close image">&times;</button>
     <img class="lightbox-img" id="lightboxImg" alt="Expanded gallery image">
   </div>
-
+  <!-- Scroll-reveal for the About card — self-contained, doesn't depend on script.js -->
+  <script>
+    (function () {
+      var card = document.querySelector('.reveal-card');
+      if (!card) return;
+      if (!('IntersectionObserver' in window)) { card.classList.add('in-view'); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      io.observe(card);
+    })();
+  </script>
 </body>
 </html>
+ 
