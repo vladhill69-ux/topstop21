@@ -115,51 +115,21 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
 .logo {
   display: inline-flex;
   align-items: center;
-  position: relative;
-  padding: 6px;
 }
-/* Slowly rotating gold ring — sits behind the logo for a bit of ceremony/flare */
-.logo::before {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg,
-    var(--gold) 0deg, transparent 55deg,
-    var(--gold) 100deg, transparent 160deg,
-    var(--gold) 210deg, transparent 270deg,
-    var(--gold) 330deg, var(--gold) 360deg);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
-          mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
-  animation: logoSpin 7s linear infinite;
-  pointer-events: none;
-}
+/* Clean, static logo treatment — no spinning ring, no pulsing glow */
 .logo-img {
-  position: relative;
-  z-index: 1;
   height: clamp(120px, 12vw, 168px);
   width: auto;
   border-radius: 50%;
   padding: 5px;
   background: var(--bg-soft);
   border: 3px solid var(--gold);
-  box-shadow: 0 0 0 4px rgba(217,182,87,.18), 0 8px 22px rgba(217,182,87,.4);
-  animation: logoGlow 3.4s ease-in-out infinite;
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .logo:hover .logo-img {
-  transform: scale(1.08);
-  animation-play-state: paused;
-  box-shadow: 0 0 0 6px rgba(217,182,87,.28), 0 14px 34px rgba(217,182,87,.6);
-}
-.logo:hover::before { animation-duration: 2s; }
-@keyframes logoGlow {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(217,182,87,.18), 0 8px 22px rgba(217,182,87,.35); }
-  50%      { box-shadow: 0 0 0 8px rgba(217,182,87,.28), 0 10px 28px rgba(217,182,87,.55); }
-}
-@keyframes logoSpin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) {
-  .logo-img, .logo::before { animation: none; }
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0,0,0,.16);
 }
 .nav-links {
   display: flex;
@@ -353,25 +323,10 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   color: var(--gold-ink);
 }
 /* ─── ABOUT ─── */
-#about { position: relative; overflow: hidden; }
-#about .container { position: relative; z-index: 1; }
-/* Ambient floating gold glow — decorative, purely atmospheric */
-.about-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: .3;
-  pointer-events: none;
-  background: radial-gradient(circle, var(--gold), transparent 70%);
-  animation: aboutFloat 11s ease-in-out infinite;
-  z-index: 0;
-}
-.about-glow--1 { width: 360px; height: 360px; top: -120px; left: -120px; }
-.about-glow--2 { width: 300px; height: 300px; bottom: -100px; right: -100px; animation-delay: -5.5s; }
-@keyframes aboutFloat {
-  0%, 100% { transform: translate(0,0) scale(1); }
-  50%      { transform: translate(24px,-18px) scale(1.1); }
-}
+/* Decorative floating glow blobs removed — if your index.html still has the
+   .about-glow divs from before, this keeps them harmlessly invisible rather
+   than requiring an HTML edit right now. */
+.about-glow { display: none; }
 .about-merged-card {
   margin-top: 1.2rem;
   background: var(--panel);
@@ -383,54 +338,24 @@ main > section:nth-of-type(even) { background: var(--bg-soft); }
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.6rem, 3vw, 2.8rem);
 }
-/* Scroll-reveal entrance — progressively enhanced: only kicks in once JS has
-   confirmed it can run (html.js) and .in-view is added by the observer, so a
-   no-JS visitor always sees the finished section, never a hidden one. */
+/* Scroll-reveal entrance — simplified to one clean fade/rise for the whole
+   card (no per-item cascade, no spring-bounce easing). Progressively
+   enhanced: only applies once JS has confirmed it can run (html.js) and
+   .in-view has been added by your observer script, so a no-JS visitor — or
+   a page without that script — always sees the finished section. */
 html.js .about-merged-card.reveal-card {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
 }
 html.js .about-merged-card.reveal-card.in-view {
   opacity: 1;
   transform: none;
 }
-html.js .reveal-card .about-list li,
-html.js .reveal-card .about-pill,
-html.js .reveal-card .process-item {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity .55s ease, transform .55s cubic-bezier(.34,1.56,.64,1);
-}
-html.js .reveal-card.in-view .about-list li,
-html.js .reveal-card.in-view .about-pill,
-html.js .reveal-card.in-view .process-item {
-  opacity: 1;
-  transform: none;
-}
-html.js .reveal-card .about-list li:nth-child(1) { transition-delay: .15s; }
-html.js .reveal-card .about-list li:nth-child(2) { transition-delay: .25s; }
-html.js .reveal-card .about-list li:nth-child(3) { transition-delay: .35s; }
-html.js .reveal-card .about-list li:nth-child(4) { transition-delay: .45s; }
-html.js .reveal-card .about-pill:nth-child(1) { transition-delay: .5s; }
-html.js .reveal-card .about-pill:nth-child(2) { transition-delay: .56s; }
-html.js .reveal-card .about-pill:nth-child(3) { transition-delay: .62s; }
-html.js .reveal-card .about-pill:nth-child(4) { transition-delay: .68s; }
-html.js .reveal-card .about-pill:nth-child(5) { transition-delay: .74s; }
-html.js .reveal-card .about-pill:nth-child(6) { transition-delay: .8s; }
-html.js .reveal-card .process-item:nth-child(1) { transition-delay: .2s; }
-html.js .reveal-card .process-item:nth-child(2) { transition-delay: .38s; }
-html.js .reveal-card .process-item:nth-child(3) { transition-delay: .56s; }
-html.js .reveal-card .process-item:nth-child(4) { transition-delay: .74s; }
 @media (prefers-reduced-motion: reduce) {
-  html.js .about-merged-card.reveal-card,
-  html.js .reveal-card .about-list li,
-  html.js .reveal-card .about-pill,
-  html.js .reveal-card .process-item,
-  .about-glow {
-    opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important;
+  html.js .about-merged-card.reveal-card {
+    opacity: 1 !important; transform: none !important; transition: none !important;
   }
-  .about-glow { opacity: .3 !important; }
 }
 .about-merged-card h3,
 .about-merged-card h4 {
@@ -449,21 +374,14 @@ html.js .reveal-card .process-item:nth-child(4) { transition-delay: .74s; }
   position: relative;
   padding-left: 1.4rem;
   margin: .65rem 0;
-  transition: transform .2s ease, color .2s ease;
-}
-.about-list li:hover {
-  transform: translateX(4px);
-  color: var(--dark);
 }
 .about-list li::before {
   content: "";
   position: absolute; left: 0; top: .5rem;
   width: 8px; height: 8px;
   background: var(--gold);
-  transition: transform .2s ease;
 }
-.about-list li:hover::before { transform: scale(1.4); }
-/* Process timeline — a gold rail "draws" downward through the numbered steps on reveal */
+/* Process timeline — a plain static rail behind the numbers, no "drawing" animation */
 .process-steps { display: grid; gap: 1.1rem; position: relative; }
 .process-steps::before {
   content: "";
@@ -472,16 +390,6 @@ html.js .reveal-card .process-item:nth-child(4) { transition-delay: .74s; }
   width: 2px;
   background: var(--border-strong);
 }
-.process-steps::after {
-  content: "";
-  position: absolute;
-  left: 15px; top: 16px;
-  width: 2px; height: 0;
-  background: var(--gold);
-  transition: height 1.3s ease .4s;
-}
-html.js .reveal-card.in-view .process-steps::after { height: calc(100% - 32px); }
-html:not(.js) .process-steps::after { height: calc(100% - 32px); }
 .process-item {
   display: grid;
   grid-template-columns: auto minmax(0,1fr);
@@ -498,13 +406,6 @@ html:not(.js) .process-steps::after { height: calc(100% - 32px); }
   flex: none;
   position: relative;
   z-index: 1;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
-.process-item:hover .process-number {
-  transform: scale(1.12);
-  background: var(--gold);
-  color: var(--gold-ink);
-  box-shadow: 0 0 0 5px rgba(217,182,87,.22);
 }
 .process-content h4 { margin: 0 0 .2rem; font-size: .98rem; color: var(--ink); }
 .process-content p  { margin: 0; font-size: .88rem; color: var(--muted); }
@@ -513,14 +414,12 @@ html:not(.js) .process-steps::after { height: calc(100% - 32px); }
   font-size: .78rem; font-weight: 700; padding: .32rem .85rem; border-radius: var(--radius-sm);
   border: 1px solid var(--border-strong);
   background: var(--bg-soft); color: var(--dark);
-  transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
 }
 .about-pill:hover {
-  transform: translateY(-3px);
   background: var(--gold);
   border-color: var(--gold);
   color: var(--gold-ink);
-  box-shadow: 0 8px 18px rgba(217,182,87,.35);
 }
 /* ─── SERVICES ─── */
 .services-grid {
@@ -624,9 +523,8 @@ html:not(.js) .process-steps::after { height: calc(100% - 32px); }
   border: none;
   background: var(--border-strong);
   cursor: pointer;
-  transition: background .15s ease, transform .15s ease;
+  transition: background .15s ease;
 }
-.testimonial-dot:hover { transform: translateY(-1px); }
 .testimonial-dot.active { background: var(--gold); }
 /* ─── SUPPLIERS ─── */
 .suppliers-grid {
@@ -643,10 +541,9 @@ html:not(.js) .process-steps::after { height: calc(100% - 32px); }
   background: var(--panel);
   border: 1px solid var(--border);
   filter: grayscale(.2) opacity(.85);
-  transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+  transition: border-color .18s ease, filter .18s ease;
 }
 .suppliers-grid img:hover {
-  transform: translateY(-3px);
   border-color: var(--gold);
   filter: grayscale(0) opacity(1);
 }
@@ -683,12 +580,7 @@ html:not(.js) .process-steps::after { height: calc(100% - 32px); }
   aspect-ratio: 4 / 3;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  transition: transform .22s ease, box-shadow .22s ease;
   cursor: pointer;
-}
-.gallery-slide:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
 }
 .gallery-arrow {
   position: absolute;
@@ -873,4 +765,3 @@ footer {
   box-shadow: var(--shadow-lg);
 }
 @media (max-width: 768px) { .call-now-btn { display: flex; } }
- 
